@@ -1,0 +1,4 @@
+{"web":{"client_id":"30357598726-63ccj6gomj64k6fn3hp6mqe3bgsv9br3.apps.googleusercontent.com","project_id":"musclemap",
+"auth_uri":"https://accounts.google.com/o/oauth2/auth",
+"token_uri":"https://oauth2.googleapis.com/token","auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs",
+"client_secret":"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","javascript_origins":["http://localhost:4200"]}}
