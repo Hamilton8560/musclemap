@@ -10,13 +10,14 @@ import {
   //FacebookLoginProvider
 } from '@abacritt/angularx-social-login';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
     LoginComponent,
-    
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
