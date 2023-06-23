@@ -1,0 +1,31 @@
+
+<div class="flex flex-col items-center justify-center h-full">
+<h1 class="mt-64 mr-32 text-xl font-sans  font-semibold">Welcome back</h1>
+<h1 class="mb-12 text-xl mr-28 -mt-3 font-sans  font-semibold">to a better you!</h1>
+<form [formGroup]="loginForm">
+    <label for="email" class="text-sm text-gray-500 ">Email</label><br>
+    <input class="rounded-md px-9 py-2.5 my-2 mb-4 border border-gray-400"
+     placeholder="janedoe@me.com" type="email" formControlName="email" id="email" required minlength="4">
+     <br>
+    <label for="password" class="text-sm text-gray-500">Password</label><br>
+    <input class="rounded-md px-9 py-2.5 my-2 mb-4 border border-gray-400"
+    type="password" formControlName="password" id="email" required minlength="8">
+    <br>
+    <a href="" class="text-sm hover:underline">forgot password?</a><br>
+    <div class="flex flex-col items-center"> 
+        <i ></i>
+    <button class="rounded-md mt-4 text-white bg-gray-500 text-center px-24 py-2 hover:bg-blue-700 text-sm" type="submit" 
+    >Sign in</button>
+     </div>    
+</form>
+<div class="flex items-center mt-8">
+    <hr class="border border-black px-10 my-3">
+    <p class="px-2 text-sm"> or login with </p>
+    <hr class="border border-black px-10 my-3">
+  </div>
+<asl-google-signin-button class="mt-4" type="standard" size="large" *ngIf="!user"></asl-google-signin-button>
+<div class="flex items-center mt-16 text-sm">
+    <p>dont have an account?</p>
+    <a class="ml-2 text-blue-700 underline font-semibold" href="">Sign up</a>
+</div>
+</div>
