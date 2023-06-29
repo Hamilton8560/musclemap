@@ -13,4 +13,9 @@ export class LandingPageComponent {
   onLogin(){
     this.router.navigate(['login'])
   }
+
+  onRegister(){
+    this.router.navigate(['register'])
+  }
+
 }

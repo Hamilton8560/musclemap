@@ -26,6 +26,6 @@
 <asl-google-signin-button class="mt-4" type="standard" size="large" *ngIf="!user"></asl-google-signin-button>
 <div class="flex items-center mt-16 text-sm">
     <p>dont have an account?</p>
-    <a class="ml-2 text-blue-700 underline font-semibold" href="">Sign up</a>
+    <a (click)="onRegister()" class="ml-2 text-blue-700 underline font-semibold" href="">Sign up</a>
 </div>
 </div>
