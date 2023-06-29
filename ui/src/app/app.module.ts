@@ -11,19 +11,25 @@ import {
 } from '@abacritt/angularx-social-login';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { PaymentComponent } from './payment/payment.component';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
+import { NgxPayPalModule } from 'ngx-paypal';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    PaymentComponent,
+    ConfirmationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SocialLoginModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule,NgxPayPalModule
   ],
   providers: [
     {
