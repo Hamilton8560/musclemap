@@ -1,6 +1,7 @@
 import { SocialAuthService } from '@abacritt/angularx-social-login';
 import { Component } from '@angular/core';
 import { FormBuilder,FormGroup,Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ loginForm:FormGroup=this.fb.group({
   email: ['', [Validators.required, Validators.email]],
   password: ['', Validators.required, Validators.minLength(3)]
 })
-  constructor(private authService: SocialAuthService,private fb: FormBuilder) {}
+  constructor(private authService: SocialAuthService,private fb: FormBuilder, private router: Router) {}
 
   ngOnInit(){
     this.authService.authState.subscribe((user)=>{
@@ -32,5 +33,7 @@ loginForm:FormGroup=this.fb.group({
   toggleShow() {
    
   }
-
+  onRegister(){
+    this.router.navigate(['register'])
+  }
 }
