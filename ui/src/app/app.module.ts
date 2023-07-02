@@ -14,6 +14,7 @@ import { RegisterComponent } from './register/register.component';
 import { PaymentComponent } from './payment/payment.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { NgxPayPalModule } from 'ngx-paypal';
+import { GoalOptionsComponent } from './goal-options/goal-options.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { NgxPayPalModule } from 'ngx-paypal';
     LoginComponent,
     RegisterComponent,
     PaymentComponent,
-    ConfirmationComponent
+    ConfirmationComponent,
+    GoalOptionsComponent
   ],
   imports: [
     BrowserModule,

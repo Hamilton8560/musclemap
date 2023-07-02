@@ -1,0 +1,26 @@
+<div class="flex flex-col items-center justify-center h-full">
+    <h1 class="mt-40 mr-44 text-xl text-gray-500 font-sans  font-semibold">Your Goals</h1>
+    <h1 class="mb-12 mt-0.1 mr-16 text-gray-400 font-sans">What do you want to achieve?</h1> 
+  <form [formGroup]="goalForm">
+    <div class="flex flex-col items-center"> 
+    <button class="rounded-md text-black bg-gray-300 text-center px-28 py-4 text-sm font-semibold"
+    type="" formControlName="loseWeight" id="loseWeight">Lose Weight</button>
+      <i ></i>
+    <button class="rounded-md mt-1.5 text-black bg-gray-300 text-center px-28 py-4 text-sm font-semibold"
+    type="" formControlName="gainWeight" id="gainWeight">Gain Muscle</button> 
+      <i ></i>
+    <button class="rounded-md mt-1.5 text-black bg-gray-300 text-center px-10 py-4 text-sm font-semibold"
+    type="" formControlName="neither" id="neither">Neither, just have a healthy lifestyle</button>
+    </div> 
+    <div class="flex flex-col items-center"> 
+      <i ></i>
+    <button (click)="next()" class="rounded-md mt-12 text-white bg-gray-500 text-center px-32 py-2 hover:bg-blue-700 text-sm" type="submit" 
+    >Next</button>
+    </div>     
+  </form>
+  <div class="flex items-center mt-28">
+    <div class="flex items-center mt-14 text-sm">
+      <p>Already have an account?</p>
+      <a (click)="onLogin()" class="ml-2 text-blue-700 underline font-semibold" href="">Log in</a>
+    </div>
+  </div>
