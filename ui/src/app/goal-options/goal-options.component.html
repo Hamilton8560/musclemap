@@ -1,26 +1,51 @@
 <div class="flex flex-col items-center justify-center h-full">
-    <h1 class="mt-40 mr-44 text-xl text-gray-500 font-sans  font-semibold">Your Goals</h1>
-    <h1 class="mb-12 mt-0.1 mr-16 text-gray-400 font-sans">What do you want to achieve?</h1> 
+    <h1 *ngIf="div1" class="mt-40 mr-44 text-xl text-gray-500 font-sans  font-bold">Your Goals</h1>
+    <h1 *ngIf="div1" class="mb-12 mt-0.1 mr-16 text-gray-400 font-sans">What do you want to achieve?</h1> 
+    <h1 *ngIf="div2" class="mt-40 mr-44 text-xl text-gray-500 font-sans  font-bold">Choose Your</h1>
+    <h1 *ngIf="div2" class="mb-8 mr-28 text-xl text-gray-500 font-sans  font-bold">Subscription Plan</h1> 
   <form [formGroup]="goalForm">
+    <div *ngIf="div1">
     <div class="flex flex-col items-center"> 
-    <button class="rounded-md text-black bg-gray-300 text-center px-28 py-4 text-sm font-semibold"
+    <button [class.firstButton]="buttonIdOne==='loseWeight'" (click)="goalOption('loseWeight')" class="rounded-md text-black bg-gray-300 text-center px-28 py-4 text-sm font-semibold"
     type="" formControlName="loseWeight" id="loseWeight">Lose Weight</button>
       <i ></i>
-    <button class="rounded-md mt-1.5 text-black bg-gray-300 text-center px-28 py-4 text-sm font-semibold"
-    type="" formControlName="gainWeight" id="gainWeight">Gain Muscle</button> 
+    <button [class.secondButton]="buttonIdOne==='gainMuscle'" (click)="goalOption('gainMuscle')" class="rounded-md mt-1.5 text-black bg-gray-300 text-center px-28 py-4 text-sm font-semibold"
+    type="" formControlName="gainMuscle" id="gainMuscle">Gain Muscle</button> 
       <i ></i>
-    <button class="rounded-md mt-1.5 text-black bg-gray-300 text-center px-10 py-4 text-sm font-semibold"
+    <button [class.thirdButton]="buttonIdOne==='neither'" (click)="goalOption('neither')" class="rounded-md mt-1.5 text-black bg-gray-300 text-center px-10 py-4 text-sm font-semibold"
     type="" formControlName="neither" id="neither">Neither, just have a healthy lifestyle</button>
-    </div> 
-    <div class="flex flex-col items-center"> 
+    </div>
+    </div>
+    <div *ngIf="div2">
+    <div class="flex flex-col items-center mt-4"> 
+    <button [class.fourthButton]="buttonIdTwo==='Yearly'" (click)="subOption('Yearly')" class="rounded-md text-black bg-gray-300 text-center px-28 py-4 text-sm font-semibold"
+    type="" formControlName="Yearly" id="Yearly">Yearly <p>$160.99 <br> every year</p></button>
       <i ></i>
-    <button (click)="next()" class="rounded-md mt-12 text-white bg-gray-500 text-center px-32 py-2 hover:bg-blue-700 text-sm" type="submit" 
+    <button [class.fifthButton]="buttonIdTwo==='Monthly'" (click)="subOption('Monthly')" class="rounded-md mt-1.5 text-black bg-gray-300 text-center px-28 py-4 text-sm font-semibold"
+    type="" formControlName="Monthly" id="Monthly">Monthly <p>$5.99 <br> every month</p></button> 
+      <i ></i>
+    <button [class.sixthButton]="buttonIdTwo==='Free'" (click)="subOption('Free')" class="rounded-md mt-1.5 text-black bg-gray-300 text-center px-10 py-4 text-sm font-semibold"
+    type="" formControlName="neither" id="Free">Free <p>$0.00 <br> for 14 days</p></button>
+    </div>
+    </div>  
+    <div *ngIf="div1" class="flex flex-col items-center"> 
+    <i ></i>
+    <button (click)="next()" class="rounded-md mt-12 text-white bg-gray-500 text-center px-32 py-3 hover:bg-blue-700 text-sm" type="submit" 
     >Next</button>
-    </div>     
+    </div>
+    <div *ngIf="div2" class="flex flex-col items-center mt-10"> 
+    <i ></i>
+    <p class="text-gray-400 text-sm">14-days free trial • Cancel anytime</p>
+    <button (click)="subscription()" class="rounded-md mt-2 text-white bg-gray-500 text-center px-24 py-3 hover:bg-blue-700 text-sm" type="submit" 
+    >Start Subscription</button>
+    </div>          
   </form>
   <div class="flex items-center mt-28">
-    <div class="flex items-center mt-14 text-sm">
+    <div *ngIf="div1" class="flex items-center mt-14 text-sm">
       <p>Already have an account?</p>
       <a (click)="onLogin()" class="ml-2 text-blue-700 underline font-semibold" href="">Log in</a>
     </div>
+  <div *ngIf="div2" class="flex items-center mt-8 text-sm">
+    <a (click)="skip()" class="ml-2 text-black-700 font-semibold" href="">Skip</a>
+  </div>
   </div>

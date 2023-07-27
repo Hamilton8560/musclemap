@@ -13,14 +13,69 @@ export class GoalOptionsComponent {
     gainWeight: [''],
     neither: [''],
   })
+
+  buttonIdOne: any = ''
+  buttonIdTwo: any = ''
+  userSelect: any;
+  div1:boolean=true;
+  div2:boolean=false;
+
   constructor(private router: Router, private formBuilder: FormBuilder){}
 
+  goalOption(userSelect){
+    this.buttonIdOne = userSelect;
+    if (this.buttonIdOne) {
+      this.loseWeight();
+    } else if (this.buttonIdOne) {
+      this.gainMuscle();
+    } else if (this.buttonIdOne) {
+      this.neither();
+    }
+  }
+
+  subOption(userSelect){
+    this.buttonIdTwo = userSelect;
+    if (this.buttonIdOne) {
+      this.yearly();
+    } else if (this.buttonIdTwo) {
+      this.monthly();
+    } else if (this.buttonIdTwo) {
+      this.free();
+    }
+  }
+
+  loseWeight() {  
+  }
+
+  gainMuscle() {
+  }
+
+  neither() {
+  }
+
+  yearly() {  
+  }
+  
+  monthly() {
+  }
+  
+  free() {
+  }  
+
   next(){
-    this.router.navigate([''])
+    this.div1 = false
+    this.div2 = true
+  }
+
+  subscription(){
+    //apiService.post
   }
 
   onLogin(){
     this.router.navigate(['login'])
+  }
+
+  skip(){
   }
 
 }
