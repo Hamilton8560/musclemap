@@ -1,6 +1,6 @@
 
 <div class="flex flex-col items-center justify-center h-full">
-<h1 class="mt-64 mr-32 text-xl font-sans  font-semibold">Welcome back</h1>
+<h1 class="mt-16 mr-32 text-xl font-sans  font-semibold">Welcome back</h1>
 <h1 class="mb-12 text-xl mr-28 -mt-3 font-sans  font-semibold">to a better you!</h1>
 <form [formGroup]="loginForm">
     <label for="email" class="text-sm text-gray-500 ">Email</label><br>
@@ -23,7 +23,9 @@
     <p class="px-2 text-sm"> or login with </p>
     <hr class="border border-black px-10 my-3">
   </div>
-<asl-google-signin-button class="mt-4" type="standard" size="large" *ngIf="!user"></asl-google-signin-button>
+  <asl-google-signin-button class="mt-4" type="standard" size="large" *ngIf="!(userService.user$ | async)"></asl-google-signin-button>
+
+<!--<asl-google-signin-button class="mt-4" type="standard" size="large" *ngIf="!user"></asl-google-signin-button>-->
 <div class="flex items-center mt-16 text-sm">
     <p>dont have an account?</p>
     <a (click)="onRegister()" class="ml-2 text-blue-700 underline font-semibold" href="">Sign up</a>
