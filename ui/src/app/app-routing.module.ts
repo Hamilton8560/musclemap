@@ -6,6 +6,7 @@ import { PaymentComponent } from './payment/payment.component';
 import { RegisterComponent } from './register/register.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { HomeComponent } from './home/home.component';
+import { GoalOptionsComponent } from './goal-options/goal-options.component';
 
 
 const routes: Routes = [
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path: 'payment', component:PaymentComponent},
   {path: 'register', component:RegisterComponent},
   {path: 'confirmation', component:ConfirmationComponent},
-  {path:'home', component:HomeComponent}
+  {path:'home', component:HomeComponent},
+  {path: 'goal-options', component:GoalOptionsComponent},
 ];
 
 @NgModule({

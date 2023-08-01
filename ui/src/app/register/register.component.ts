@@ -15,6 +15,10 @@ export class RegisterComponent {
   })
   constructor(private router: Router, private formBuilder: FormBuilder){}
   
+  register(){
+    this.router.navigate(['goal-options'])
+  }
+
   onLogin(){
     this.router.navigate(['login'])
   }
