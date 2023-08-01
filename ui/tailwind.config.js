@@ -5,7 +5,19 @@ module.exports = {
 
   ],
   theme: {
-    extend: {},
+    extend: {
+      maxWidth: {
+        '110': '110px',
+        '120': '120px',
+      },
+      maxHeight: {
+        '110': '110px',
+        '120': '120px',
+      },
+      colors: {
+        'custom-green': '#AFEA0D',
+      }
+    },
   },
   plugins: [],
 }
